@@ -4,9 +4,9 @@ WORKDIR /go/src/hello-world
 
 COPY . .
 
-#RUN go run hello-world.go
+RUN go get -d -v ./...
 
-RUN go build hello-world.go
+RUN go install -v ./...
 
-CMD ["./hello-world"]
+CMD ["hello-world"]
 
